@@ -24,21 +24,6 @@ class MainActivity : AppCompatActivity() {
         val setting = webview.settings
         setting.javaScriptEnabled = true
         setting.allowUniversalAccessFromFileURLs = true
-        webview.loadData(
-            """
-            |<html>
-            |<body>
-            |aiueo
-            |<div style="height:1000px;"></div>
-            |end
-            |<script>
-            |window.addEventListener("scroll", () => {
-            |  alert(window.scrollY);
-            |});
-            |</script>
-            |</body>
-            |</html>
-            """.trimMargin(), "text/html", "UTF-8"
-        )
+        webview.loadUrl("https://raw.githubusercontent.com/marshi/WebViewScrollSample/master/sample.html")
     }
 }
